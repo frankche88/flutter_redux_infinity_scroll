@@ -28,7 +28,7 @@ class HomeScreen extends StatefulWidget {
 
   final bool isDataLoading;
   final bool isNextPageAvailable;
-  final List<GithubIssue> items;
+  final List<Transaction> items;
   final Function refresh;
   final Function loadNextPage;
   final bool noError;
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       : widget.items.length,
                   itemBuilder: (context, index) {
                     return (index < widget.items.length)
-                        ? GithubIssueListItem(
+                        ? TransactionListItem(
                             itemIndex: index, githubIssue: widget.items[index])
                         : CustomProgressIndicator(isActive: widget.noError);
                   },

@@ -1,6 +1,6 @@
 import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
-class GithubIssueState {
-GithubIssueState({
+class TransactionState {
+TransactionState({
     this.isDataLoading,
     this.isNextPageAvailable,
     this.items,
@@ -14,19 +14,19 @@ GithubIssueState({
 
   static const int itemsPerPage = 20;
 
-  factory GithubIssueState.initial() => GithubIssueState(
+  factory TransactionState.initial() => TransactionState(
         isDataLoading: false,
         isNextPageAvailable: false,
         items: const [],
       );
 
-  GithubIssueState copyWith({
+  TransactionState copyWith({
     isDataLoading,
     isNextPageAvailable,
     items,
     error,
   }) {
-    return GithubIssueState(
+    return TransactionState(
       isDataLoading: isDataLoading ?? this.isDataLoading,
       isNextPageAvailable: isNextPageAvailable ?? this.isNextPageAvailable,
       items: items ?? this.items,

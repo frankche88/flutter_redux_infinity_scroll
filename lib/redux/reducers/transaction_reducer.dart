@@ -1,11 +1,11 @@
 
 
 import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
-import 'package:flutter_redux_infinite_list/redux/states/githubissue_state.dart';
+import 'package:flutter_redux_infinite_list/redux/states/transaction_state.dart';
 import 'package:redux/redux.dart';
 import '../actions.dart';
 
-GithubIssueState githubIssueReducer(GithubIssueState state, action) {
+TransactionState githubIssueReducer(TransactionState state, action) {
   return state.copyWith(
     isDataLoading: _isDataLoadingReducer(state.isDataLoading, action),
     isNextPageAvailable:
@@ -31,7 +31,7 @@ bool _isDataLoadingFinishedReducer(bool _, dynamic action) {
 
 bool _isNextPageAvailableReducer(bool isNextPageAvailable, dynamic action) {
   return (action is ItemsPageLoadedAction)
-      ? action.itemsPage.length == GithubIssueState.itemsPerPage
+      ? action.itemsPage.length == TransactionState.itemsPerPage
       : isNextPageAvailable;
 }
 

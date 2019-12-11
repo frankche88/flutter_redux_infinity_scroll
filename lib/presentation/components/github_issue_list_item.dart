@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 
-class GithubIssueListItem extends StatelessWidget {
-  const GithubIssueListItem({
+class TransactionListItem extends StatelessWidget {
+  const TransactionListItem({
     Key key,
     @required this.itemIndex,
     @required this.githubIssue,

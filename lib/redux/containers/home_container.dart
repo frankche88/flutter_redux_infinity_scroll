@@ -4,7 +4,7 @@ import 'package:flutter_redux_infinite_list/redux/actions.dart';
 import 'package:flutter_redux_infinite_list/redux/state.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_redux_infinite_list/redux/states/githubissue_state.dart';
+import 'package:flutter_redux_infinite_list/redux/states/transaction_state.dart';
 import 'package:redux/redux.dart';
 
 class HomeContainer extends StatelessWidget {
@@ -24,7 +24,7 @@ class HomeContainer extends StatelessWidget {
       converter: _ViewModel.fromStore,
       onInit: (store) {
         store.dispatch(
-          LoadItemsPageAction(pageNumber: 1, itemsPerPage: GithubIssueState.itemsPerPage),
+          LoadItemsPageAction(pageNumber: 0, itemsPerPage: TransactionState.itemsPerPage),
         );
       },
     );
@@ -49,15 +49,15 @@ class _ViewModel {
   void onLoadNextPage() {
     if (!isDataLoading && isNextPageAvailable) {
       store.dispatch(LoadItemsPageAction(
-        pageNumber: (items.length ~/ GithubIssueState.itemsPerPage) + 1,
-        itemsPerPage: GithubIssueState.itemsPerPage,
+        pageNumber: (items.length ~/ TransactionState.itemsPerPage) + 1,
+        itemsPerPage: TransactionState.itemsPerPage,
       ));
     }
   }
 
   void onRefresh() {
     store.dispatch(
-      LoadItemsPageAction(pageNumber: 1, itemsPerPage: GithubIssueState.itemsPerPage),
+      LoadItemsPageAction(pageNumber: 1, itemsPerPage: TransactionState.itemsPerPage),
     );
   }
 

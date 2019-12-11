@@ -18,7 +18,7 @@ _loadItemsPage() {
       NextDispatcher next) {
     next(action);
 
-    _loadFlutterGithubIssues(action.pageNumber, action.itemsPerPage).then(
+    _loadFlutterTransaction(action.pageNumber, action.itemsPerPage).then(
       (itemsPage) {
         store.dispatch(ItemsPageLoadedAction(itemsPage));
       },
@@ -28,7 +28,7 @@ _loadItemsPage() {
   };
 }
 
-Future<List<Transaction>> _loadFlutterGithubIssues(
+Future<List<Transaction>> _loadFlutterTransaction(
     int page, int perPage) async {
       // <TODO: CAmbiar por los parametros de busqueda
 
@@ -40,7 +40,8 @@ Future<List<Transaction>> _loadFlutterGithubIssues(
   var response = await http.get(
       'http://206.189.58.66:8085/transactions/$customerID?fromDate=$fromDate&pageNo=$page&pageSize=$perPage&toDate=$toDate');
   if (response.statusCode == 200) {
-    final items = json.decode(response.body) as List;
+    final paged = json.decode(response.body);
+    final items = paged["content"] as List;
     return items.map((item) => Transaction.fromJson(item)).toList();
   } else {
     throw Exception('Error getting data, http code: ${response.statusCode}.');

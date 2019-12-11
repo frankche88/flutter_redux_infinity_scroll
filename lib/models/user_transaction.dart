@@ -14,7 +14,7 @@ final String accountId;
   Transaction.fromJson(Map<String, dynamic> json)
       : accountId = json['accountId'],
         amount = json['amount'],
-        transactionDate = DateTime.parse(json['transactionType']),
+        transactionDate = DateTime.parse(json['transactionDate']),
         transactionId = json['transactionId'],
         transactionType = json['transactionType'];
 }

@@ -1,16 +1,16 @@
 
-import 'package:flutter_redux_infinite_list/redux/states/githubissue_state.dart';
+import 'package:flutter_redux_infinite_list/redux/states/transaction_state.dart';
 
 
 class AppState {
-  final GithubIssueState githubIssueState;
+  final TransactionState githubIssueState;
   AppState({
     this.githubIssueState,
   });
 
 
   factory AppState.initial() => AppState(
-        githubIssueState: GithubIssueState.initial(),
+        githubIssueState: TransactionState.initial(),
       );
 
   AppState copyWith({
