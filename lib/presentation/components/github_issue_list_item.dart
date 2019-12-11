@@ -5,11 +5,11 @@ class TransactionListItem extends StatelessWidget {
   const TransactionListItem({
     Key key,
     @required this.itemIndex,
-    @required this.githubIssue,
+    @required this.transaction,
   }) : super(key: key);
 
   final int itemIndex;
-  final Transaction githubIssue;
+  final Transaction transaction;
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +17,16 @@ class TransactionListItem extends StatelessWidget {
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
         title: Text(
-          '#${itemIndex + 1}: ${githubIssue.transactionType}',
+          '#${itemIndex + 1}: ${transaction.transactionId}',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
         subtitle: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(githubIssue.createdAtFormatted),
-            Text(githubIssue.transactionType),
+            Text(transaction.amount.toString()),
+            Text(transaction.createdAtFormatted),
+            Text(transaction.transactionType),
           ],
         ),
         isThreeLine: true,

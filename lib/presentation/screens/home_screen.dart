@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) {
                     return (index < widget.items.length)
                         ? TransactionListItem(
-                            itemIndex: index, githubIssue: widget.items[index])
+                            itemIndex: index, transaction: widget.items[index])
                         : CustomProgressIndicator(isActive: widget.noError);
                   },
                   controller: _scrollController,

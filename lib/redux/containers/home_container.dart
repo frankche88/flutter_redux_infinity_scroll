@@ -57,7 +57,7 @@ class _ViewModel {
 
   void onRefresh() {
     store.dispatch(
-      LoadItemsPageAction(pageNumber: 1, itemsPerPage: TransactionState.itemsPerPage),
+      LoadItemsPageAction(pageNumber: 0, itemsPerPage: TransactionState.itemsPerPage),
     );
   }
 
