@@ -1,6 +1,6 @@
 
 
-import 'package:flutter_redux_infinite_list/models/github_issue.dart';
+import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 import 'package:flutter_redux_infinite_list/redux/states/githubissue_state.dart';
 import 'package:redux/redux.dart';
 import '../actions.dart';
@@ -35,11 +35,11 @@ bool _isNextPageAvailableReducer(bool isNextPageAvailable, dynamic action) {
       : isNextPageAvailable;
 }
 
-List<GithubIssue> _itemsReducer(List<GithubIssue> items, dynamic action) {
+List<Transaction> _itemsReducer(List<Transaction> items, dynamic action) {
   if (action is ItemsPageLoadedAction) {
     return List.from(items)..addAll(action.itemsPage);
   } else if (action is LoadItemsPageAction && action.pageNumber == 1) {
-    return List<GithubIssue>();
+    return List<Transaction>();
   } else {
     return items;
   }

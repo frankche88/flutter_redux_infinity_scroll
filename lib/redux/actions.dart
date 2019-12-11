@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_redux_infinite_list/models/github_issue.dart';
+import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 import 'package:meta/meta.dart';
 
 class LoadItemsPageAction {
@@ -15,7 +15,7 @@ class LoadItemsPageAction {
 class ItemsPageLoadedAction {
   ItemsPageLoadedAction(this.itemsPage);
 
-  final List<GithubIssue> itemsPage;
+  final List<Transaction> itemsPage;
 }
 
 class ErrorOccurredAction {

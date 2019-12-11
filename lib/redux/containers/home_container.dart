@@ -1,4 +1,4 @@
-import 'package:flutter_redux_infinite_list/models/github_issue.dart';
+import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 import 'package:flutter_redux_infinite_list/presentation/screens/home_screen.dart';
 import 'package:flutter_redux_infinite_list/redux/actions.dart';
 import 'package:flutter_redux_infinite_list/redux/state.dart';
@@ -42,7 +42,7 @@ class _ViewModel {
 
   final bool isDataLoading;
   final bool isNextPageAvailable;
-  final List<GithubIssue> items;
+  final List<Transaction> items;
   final Store<AppState> store;
   final bool noError;
 

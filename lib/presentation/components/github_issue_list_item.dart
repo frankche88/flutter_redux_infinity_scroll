@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_redux_infinite_list/models/github_issue.dart';
+import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 
 class GithubIssueListItem extends StatelessWidget {
   const GithubIssueListItem({
@@ -9,7 +9,7 @@ class GithubIssueListItem extends StatelessWidget {
   }) : super(key: key);
 
   final int itemIndex;
-  final GithubIssue githubIssue;
+  final Transaction githubIssue;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class GithubIssueListItem extends StatelessWidget {
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
         title: Text(
-          '#${itemIndex + 1}: ${githubIssue.title}',
+          '#${itemIndex + 1}: ${githubIssue.transactionType}',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
@@ -25,7 +25,7 @@ class GithubIssueListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(githubIssue.createdAtFormatted),
-            Text(githubIssue.state),
+            Text(githubIssue.transactionType),
           ],
         ),
         isThreeLine: true,

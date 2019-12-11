@@ -1,5 +1,5 @@
 import 'package:flutter_redux_infinite_list/common/debouncer.dart';
-import 'package:flutter_redux_infinite_list/models/github_issue.dart';
+import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 import 'package:flutter_redux_infinite_list/presentation/components/custom_progress_indicator.dart';
 import 'package:flutter_redux_infinite_list/presentation/components/github_issue_list_item.dart';
 import 'package:flutter_redux_infinite_list/presentation/error_notifier.dart';
@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 
   final bool isDataLoading;
   final bool isNextPageAvailable;
-  final List<GithubIssue> items;
+  final List<Transaction> items;
   final Function refresh;
   final Function loadNextPage;
   final bool noError;

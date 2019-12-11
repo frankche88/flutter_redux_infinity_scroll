@@ -1,4 +1,4 @@
-import 'package:flutter_redux_infinite_list/models/github_issue.dart';
+import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 class GithubIssueState {
 GithubIssueState({
     this.isDataLoading,
@@ -9,7 +9,7 @@ GithubIssueState({
 
   final bool isDataLoading;
   final bool isNextPageAvailable;
-  final List<GithubIssue> items;
+  final List<Transaction> items;
   final Exception error;
 
   static const int itemsPerPage = 20;

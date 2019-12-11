@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:flutter_redux_infinite_list/models/github_issue.dart';
+import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 import 'package:flutter_redux_infinite_list/redux/actions.dart';
 import 'package:flutter_redux_infinite_list/redux/state.dart';
 import 'package:http/http.dart' as http;
@@ -28,13 +28,20 @@ _loadItemsPage() {
   };
 }
 
-Future<List<GithubIssue>> _loadFlutterGithubIssues(
+Future<List<Transaction>> _loadFlutterGithubIssues(
     int page, int perPage) async {
+      // <TODO: CAmbiar por los parametros de busqueda
+
+  String customerID = "4ac5d6f2-f546-4e5b-a7ac-c5cd9817602e";
+  String fromDate="01122019";  
+  String toDate="12122019";
+
+  //http://206.189.58.66:8085/transactions/$customerID?fromDate=$fromDate&pageNo=$page&pageSize=$pageSize&toDate=$toDate
   var response = await http.get(
-      'https://api.github.com/repos/flutter/flutter/issues?page=$page&per_page=$perPage');
+      'http://206.189.58.66:8085/transactions/$customerID?fromDate=$fromDate&pageNo=$page&pageSize=$perPage&toDate=$toDate');
   if (response.statusCode == 200) {
     final items = json.decode(response.body) as List;
-    return items.map((item) => GithubIssue.fromJson(item)).toList();
+    return items.map((item) => Transaction.fromJson(item)).toList();
   } else {
     throw Exception('Error getting data, http code: ${response.statusCode}.');
   }
