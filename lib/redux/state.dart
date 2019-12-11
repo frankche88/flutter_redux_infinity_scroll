@@ -3,21 +3,21 @@ import 'package:flutter_redux_infinite_list/redux/states/transaction_state.dart'
 
 
 class AppState {
-  final TransactionState githubIssueState;
+  final TransactionState transactionState;
   AppState({
-    this.githubIssueState,
+    this.transactionState,
   });
 
 
   factory AppState.initial() => AppState(
-        githubIssueState: TransactionState.initial(),
+        transactionState: TransactionState.initial(),
       );
 
   AppState copyWith({
-    githubIssueState,
+    transactionState,
   }) {
     return AppState(
-      githubIssueState: githubIssueState ?? this.githubIssueState,
+      transactionState: transactionState ?? this.transactionState,
     );
   }
 

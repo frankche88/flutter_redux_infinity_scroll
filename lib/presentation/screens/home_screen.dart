@@ -1,7 +1,7 @@
 import 'package:flutter_redux_infinite_list/common/debouncer.dart';
 import 'package:flutter_redux_infinite_list/models/user_transaction.dart';
 import 'package:flutter_redux_infinite_list/presentation/components/custom_progress_indicator.dart';
-import 'package:flutter_redux_infinite_list/presentation/components/github_issue_list_item.dart';
+import 'package:flutter_redux_infinite_list/presentation/components/transaction_list_item.dart';
 import 'package:flutter_redux_infinite_list/presentation/error_notifier.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

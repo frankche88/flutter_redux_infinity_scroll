@@ -63,11 +63,11 @@ class _ViewModel {
 
   static _ViewModel fromStore(Store<AppState> store) {
     return _ViewModel(
-      isDataLoading: store.state.githubIssueState.isDataLoading,
-      isNextPageAvailable: store.state.githubIssueState.isNextPageAvailable,
-      items: store.state.githubIssueState.items,
+      isDataLoading: store.state.transactionState.isDataLoading,
+      isNextPageAvailable: store.state.transactionState.isNextPageAvailable,
+      items: store.state.transactionState.items,
       store: store,
-      noError: store.state.githubIssueState.error == null,
+      noError: store.state.transactionState.error == null,
     );
   }
 }

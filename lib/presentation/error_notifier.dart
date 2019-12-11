@@ -43,7 +43,7 @@ class _ViewModel {
   static _ViewModel fromStore(Store<AppState> store) {
     return _ViewModel(
       markErrorAsHandled: () => store.dispatch(ErrorHandledAction()),
-      error: store.state.githubIssueState.error,
+      error: store.state.transactionState.error,
     );
   }
 
